@@ -1,0 +1,6 @@
+<% if current_user %>
+  <h1><%= current_user.username %>'s Feed</h1>
+  <a href= "/users/logout"> Log Out </a>
+<%else%>
+  <h3><a href="/">Login</a></h3>
+<% end%>

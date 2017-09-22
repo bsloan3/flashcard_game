@@ -1,0 +1,15 @@
+<h1>New User</h1>
+
+<form action="/users" method= "post">
+  <label for="username_input">Username:</label>
+  <input id="username_input" name="user[username]" type="text" value="<%= @username.try(:username) %>">
+  <br>
+  <label for="email_input">Email:</label>
+  <input id="email_input" name="user[email]" type="text" value="<%= @username.try(:email) %>">
+  <br>
+  <label for="password_input">Password:</label>
+  <input id="password_input" name="user[password]" type="text" value="<%= @username.try(:password) %>">
+  <br>
+  <input type = "submit" value = "Create">
+</form>
+
