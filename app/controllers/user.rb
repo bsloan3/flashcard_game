@@ -4,6 +4,11 @@ get '/users/logout' do
   redirect "/"
 end
 
+get '/users/:id' do
+
+  erb :'users/index'
+end
+
 # create new user
 get '/users/new' do
 
@@ -20,12 +25,3 @@ post '/users' do
     erb :"/users/new"
   end
 end
-
-
-# once logged in
-
-get '/users/:id' do
-
-  erb :'users/index'
-end
-

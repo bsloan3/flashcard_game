@@ -8,7 +8,7 @@
   <input id="email_input" name="user[email]" type="text" value="<%= @username.try(:email) %>">
   <br>
   <label for="password_input">Password:</label>
-  <input id="password_input" name="user[password]" type="text" value="<%= @username.try(:password) %>">
+  <input id="password_input" name="user[password]" type="password" value="<%= @username.try(:password) %>">
   <br>
   <input type = "submit" value = "Create">
 </form>
