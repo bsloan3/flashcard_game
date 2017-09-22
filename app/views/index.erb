@@ -1,0 +1,13 @@
+<h1>Log In</h1>
+<h3><a href="/users/new">New User</a></h3>
+<br>
+
+<form action="/login" method= "post">
+  <label for="username_input">Username:</label>
+  <input id="username_input" name="user[username]" type="text" value="<%= @username.try(:username) %>">
+  <br>
+  <label for="password_input">Password:</label>
+  <input id="password_input" name="user[password]" type="text" value="<%= @password.try(:password) %>">
+  <br>
+  <input type = "submit" value = "Log In">
+</form>
