@@ -5,6 +5,7 @@ get '/users/logout' do
 end
 
 get '/users/:id' do
+  @all_decks = Deck.all
 
   erb :'users/index'
 end
