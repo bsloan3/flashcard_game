@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 
   has_many :rounds
+  has_many :guesses, through: :rounds, source: :guesses
+  has_many :decks, through: :rounds, source: :deck
 
   def password
     @password ||= BCrypt::Password.new(password_hash)
