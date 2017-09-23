@@ -1,3 +1,9 @@
+# create new user
+get '/users/new' do
+
+  erb :'users/new'
+end
+
 # log out
 get '/users/logout' do
   session.clear
@@ -8,12 +14,6 @@ get '/users/:id' do
   @all_decks = Deck.all
 
   erb :'users/index'
-end
-
-# create new user
-get '/users/new' do
-
-  erb :'users/new'
 end
 
 post '/users' do
