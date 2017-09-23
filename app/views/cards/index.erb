@@ -1,8 +1,7 @@
 <h1><%= @deck.category %></h1>
-
-<form action="/card/:deck_id/:id %>" method= "post">
-  <label for="title_input"><%= @cards.first.question%></label>
-  <input id="title_input" name="guess[user_guess]" type="text" value="<%= @user_guess.try(:user_guess) %>">
+<form action="/card/<%= @deck.id %>/<%= @current_card %>" method= "post">
+  <label for="title_input"><%= @question %></label>
+  <input id="title_input" name="guess[user_guess]" type="text">
   <br>
   <input type = "submit" value = "Answer">
 </form>
