@@ -1,3 +1,12 @@
-<h1><%= current_user.username %>'s Profile</h1>
+<h1><center><%= current_user.username %></h1>
+<h2> deck's played by <%= current_user.username %> </h2>
 
-<h2><%= current_user.username %>'s Scores</h1>
+<% chronological = current_user.played_decks.sort_by &:created_at %>
+
+<% chronological.each do |deck| %>
+  <%= puts "date: #{deck.created_at}" %>
+  <%= puts "cards: #{deck.count(:cards)}" %>
+  <%= puts "guesses: #{deck.count(:guesses)}" %>
+<% end %>
+
+<a href = "/profile/:id/stats"> <h2><%= current_user.username %>'s Scores</h1> </a>
