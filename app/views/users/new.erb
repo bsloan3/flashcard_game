@@ -1,25 +1,28 @@
 <div class="container">
   <h1>Flashcard Quiz App</h1>
+  <h4>Register Here</h4>
 </div>
 <div class="container">
-    <h3>Register Here</h3>
-    <form action="/users" method= "post">
-      <div class="form-group">
-        <label for="username_input">Username:</label>
-        <input id="username_input" class="form-control" name="user[username]" placeholder="Enter Username"type="text" value="<%= @username.try(:username) %>">
-      </div>
+  <h3>Register Here</h3>
+  <form action="/users" method= "post">
+    <div class="form-group">
+      <label for="username_input">Username:</label>
+      <input id="username_input" class="form-control" name="user[username]" placeholder="Enter Username"type="text" value="<%= @username.try(:username) %>">
+    </div>
 
-      <div class="form-group">
-        <label for="email_input">Email:</label>
-        <!--<input id="email_input" name="user[email]" type="text" value="<%= @username.try(:email) %>">-->
-        <input id="email_input" class="form-control" name="user[email]" placeholder="Enter Email"type="text" value="<%= @username.try(:email) %>">
-      </div>
+    <div class="form-group">
+      <label for="email_input">Email:</label>
+      <!--<input id="email_input" name="user[email]" type="text" value="<%= @username.try(:email) %>">-->
+      <input id="email_input" class="form-control" name="user[email]" placeholder="Enter Email"type="text" value="<%= @username.try(:email) %>">
+    </div>
 
-      <div class="form-group">
-        <label for="password_input">Password:</label>
-        <input id="password_input" class="form-control" name="user[password]" placeholder="Enter Password"type="password" value="<%= @password.try(:password) %>">
-      </div>
-      <div class="container">
-        <button type="submit" class="btn btn-default">Log In</button>
-      </div>
-    </form>
+    <div class="form-group">
+      <label for="password_input">Password:</label>
+      <input id="password_input" class="form-control" name="user[password]" placeholder="Enter Password"type="password" value="<%= @password.try(:password) %>">
+    </div>
+    
+    <div class="container">
+      <button type="submit" class="btn btn-default">Log In</button>
+    </div>
+  </form>
+</div>
