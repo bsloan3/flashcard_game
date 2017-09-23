@@ -9,6 +9,9 @@
 
 get '/deck/:id' do
   @deck = Deck.find_by(id: params[:id])
+  @cards = @deck.cards
+  @round = Round.create(deck_id: params[:deck_id], user_id: current_user)
+  session[:cards]  = @cards.map {|card| card.id}
 
   erb :'decks/index'
 end
