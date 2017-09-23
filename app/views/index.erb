@@ -1,13 +1,13 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Flashcard Quiz App</h1>
+    <h1>Flashcards Quiz App</h1>
   </div>
   <div class="container">
     <h3>Log In</h3>
     <form action="/login" method= "post">
       <div class="form-group">
         <label for="username_input">Username:</label>
-        <input id="username_input" class="form-control" name="user[username]" placeholder="Enter Email"type="text" value="<%= @username.try(:username) %>">
+        <input id="username_input" class="form-control" name="user[username]" placeholder="Enter Username"type="text" value="<%= @username.try(:username) %>">
       </div>
       <div class="form-group">
         <label for="password_input">Password:</label>
