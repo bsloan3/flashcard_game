@@ -12,9 +12,3 @@ get '/deck/:id' do
 
   erb :'decks/index'
 end
-
-post '/deck/:id' do
-  @deck = Deck.find_by(id: params[:id])
-
-  erb :'decks/index'
-end

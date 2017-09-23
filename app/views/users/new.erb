@@ -1,5 +1,4 @@
 <h1>New User</h1>
-
 <form action="/users" method= "post">
   <label for="username_input">Username:</label>
   <input id="username_input" name="user[username]" type="text" value="<%= @username.try(:username) %>">
