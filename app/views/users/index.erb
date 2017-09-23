@@ -1,6 +1,16 @@
 <% if current_user %>
   <h1><%= current_user.username %>'s Feed</h1>
+  <a href= "/users/:id"> Profile </a>
+  <br>
   <a href= "/users/logout"> Log Out </a>
+
+  <% @all_decks.each do |deck| %>
+    <form action="/deck/<%= deck.id %>" method= "get">
+      <input type = "submit" value = "<%= deck.category %>">
+    </form>
+  <%end%>
+
+
 <%else%>
   <h3><a href="/">Login</a></h3>
 <% end%>
