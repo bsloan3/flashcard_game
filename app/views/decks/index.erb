@@ -1,3 +1,10 @@
-<h1><%= @deck.category %></h1>
+<div class="container">
+  <div class="page-header">
+    <h1><center><%= @deck.category %></h1>
+  </div>
+  <h2><center><a href= "/card/<%= @deck.id %>/<%= @deck.cards.first.id %>"> Play! </a></h2>
+</div>
 
-<h2><a href= "/card/<%= @deck.id %>/<%= @deck.cards.first.id %>"> Play! </a></h2>
+
+
+
