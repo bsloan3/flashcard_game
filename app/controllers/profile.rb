@@ -1,7 +1,7 @@
 get '/profile/:id' do
 
-  @rounds = Round.find_by(user_id: current_user.id)
-
+  @rounds = Round.where(user_id: current_user.id)
+  @first_try = Round.where(guesses: "true")
   erb :'profile/index'
 end
 
