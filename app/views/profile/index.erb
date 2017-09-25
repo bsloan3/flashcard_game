@@ -2,23 +2,15 @@
   <div class="page-header">
     <h1>Flashcard App Profile</h1>
   </div>
-  <p>User: <%= current_user.username %></p>
+  <p>User: <%= current_user.username%></p>
 </div>
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6" style="background-color:lavenderblush;"><h4> Deck's played by <%= current_user.username %> </h4></div>
-    <div class="col-md-6" style="background-color:lavenderblush;"><a href = "/profile/:id/stats"> <h4><%= current_user.username %>'s: Scores</h4> </a></div>
+    <div class="col-md-6" style="background-color:lavenderblush;"><h4> Decks played by: <%= current_user.username %> </h4></div>
+    <div class="col-md-6" style="background-color:lightgrey;"><h4> Date: <%=@rounds.created_at%> <p><p> Cards in Deck: <%= @rounds.cards.count%> <p> First Try: <%= @rounds.user.guesses.count %> <p> Total guesses: </h4></div>
+    <p><div class="col-md-6" style="background-color:lavenderblush;"><a href = "/profile/:id/stats"> <h4><%= current_user.username %>'s: Scores</h4> </a></div></p>
+
   </div>
+
 </div>
-
-<!-- <h2> Deck's played by <%= current_user.username %> </h2> -->
-
-<% chronological = current_user.played_decks.sort_by &:created_at %>
-
-<% chronological.each do |deck| %>
-  <%= puts "date: #{deck.created_at}" %>
-  <%= puts "cards: #{deck.count(:cards)}" %>
-  <%= puts "guesses: #{deck.count(:guesses)}" %>
-<% end %>
-
