@@ -2,14 +2,30 @@
   <div class="page-header">
     <h1>Flashcard App Profile</h1>
   </div>
-  <p>User: <%= current_user.username%></p>
+  <h1><p>User: <%= current_user.username%></p></h1>
 </div>
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6" style="background-color:lavenderblush;"><h4> Decks played by: <%= current_user.username %> </h4></div>
-    <div class="col-md-6" style="background-color:lightgrey;"><h4> Date: <%=@rounds.created_at%> <p><p> Cards in Deck: <%= @rounds.cards.count%> <p> First Try: <p> Total guesses: <%= @rounds.user.guesses.count %> </h4></div>
-    <p><div class="col-md-6" style="background-color:lavenderblush;"><a href = "/profile/:id/stats"> <h4><%= current_user.username %>'s: Scores</h4> </a></div></p>
+
+    <h4> Decks played: <%= @rounds.count %> </h4>
+    <p><br><% @rounds.each do |round| %>
+        <div class="col-md-6" style="background-color:lightgrey;">
+          <h4> Deck name: <%= round.deck.category %> </h4><p><p>
+            <h5>Date: <%=round.created_at%> <p><p>
+          Cards in Deck: <%= round.cards.count%> <p>
+          First Try:
+       <%= round.guesses.reduce(Hash.new(0)) do |hash, guess|
+              hash[guess.card_id] += 1; hash
+           end.select {|k,v| v==1}.count %>
+            <p>
+            Total guesses: <%= round.guesses.count %> </h5> <p>
+
+          </div>
+    <%end%>
+    <p>
+
+   </p>
 
   </div>
 
