@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-md-6" style="background-color:lavenderblush;"><h4> Decks played by: <%= current_user.username %> </h4></div>
-    <div class="col-md-6" style="background-color:lightgrey;"><h4> Date: <%=@rounds.created_at%> <p><p> Cards in Deck: <%= @rounds.cards.count%> <p> First Try: <%= @rounds.user.guesses.count %> <p> Total guesses: </h4></div>
+    <div class="col-md-6" style="background-color:lightgrey;"><h4> Date: <%=@rounds.created_at%> <p><p> Cards in Deck: <%= @rounds.cards.count%> <p> First Try: <p> Total guesses: <%= @rounds.user.guesses.count %> </h4></div>
     <p><div class="col-md-6" style="background-color:lavenderblush;"><a href = "/profile/:id/stats"> <h4><%= current_user.username %>'s: Scores</h4> </a></div></p>
 
   </div>
